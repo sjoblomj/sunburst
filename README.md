@@ -15,10 +15,10 @@ Features:
 This is an adoption from work done by [Kerry Rodden](https://gist.github.com/kerryrodden/766f8f6d31f645c39f488a0befa1e3c8).
 
 There are several improvements in this adoption:
-* Works on d3.js version 5
-* Works on dynamic data, without any code changes being needed
+* Works on d3.js version 7.
+* Works on dynamic data, without any code changes being needed.
 * The size of the sunburst diagram is set on one place (in the css file), and the rest of the diagram (including the text in the middle of the circles) will adjust accordingly.
-* The length of the breadcrumb trail adapts to the size of the content instead of being static
-* A nicer legend
+* The length of the breadcrumb trail adapts to the size of the content instead of being static.
+* A nicer legend.
 * The names and values in the indata is separated by tabs instead of commas, and the names are separated by semicolons instead of hyphens. This allows for more characters to be used in the indata names.
-* Support for printing
+* Support for printing.

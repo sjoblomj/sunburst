@@ -112,7 +112,7 @@ function createVisualization(json) {
           .attr("fill-rule", "evenodd")
           .style("fill", d => colour(d.data.name))
           .style("opacity", 1)
-          .on("mouseover", mouseover);
+          .on("mouseover", (_, d) => mouseover(d));
 
   vis.selectAll("arcTexts")
     .data(nodes).enter()
@@ -123,7 +123,7 @@ function createVisualization(json) {
 
   // Add the mouseleave handler to the bounding circle.
   d3.select("#container")
-    .on("mouseleave", mouseleave);
+    .on("mouseleave", (_, d) => mouseleave(d));
 
   // Get total size of the tree = value of root node from partition.
   totalSegmentSize = path.datum().value;
@@ -179,7 +179,7 @@ function mouseleave(d) {
       .style("visibility", "hidden");
 
   // Deactivate all segments during transition.
-  const setMouseover = fnk => d3.selectAll("path").on("mouseover", fnk);
+  const setMouseover = fnk => d3.selectAll("path").on("mouseover", (_, d) => fnk(d));
   setMouseover(null);
 
   // Transition each segment to full opacity and then reactivate it.
